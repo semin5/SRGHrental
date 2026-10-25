@@ -1,0 +1,19 @@
+[Unit]
+Description=SRGH IT Rental List (Spring Boot)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=sarangit
+Group=sarangit
+WorkingDirectory=/opt/SRGH_IT/rental
+Environment=PORT=3018
+EnvironmentFile=/etc/SRGH_IT/rental.env
+ExecStart=/usr/bin/java -Xms128m -Xmx384m -jar /opt/SRGH_IT/rental/rental.jar
+Restart=always
+RestartSec=5
+TimeoutStopSec=30
+
+[Install]
+WantedBy=multi-user.target

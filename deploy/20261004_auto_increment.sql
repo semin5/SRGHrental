@@ -1,0 +1,3 @@
+USE srghrental;
+ALTER TABLE in_use MODIFY source_row INT NOT NULL AUTO_INCREMENT;
+ALTER TABLE recovered MODIFY source_row INT NOT NULL AUTO_INCREMENT;
